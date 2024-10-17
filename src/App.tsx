@@ -17,10 +17,10 @@ import klarna from "./images/logo/Marketing_Badge_With_Clear_Space.png";
 import calvin from "./images/logo/pngimg.com - calvin_klein_PNG15.png";
 import shopify from "./images/logo/logo-bestpractices-old-small-9d48f4906860fcf2c2f4257abede5f6f8d6fbc8f6fe7473e06998c136d77d963.png";
 import ofis from "./images/atasehir-image2.png";
-import { FaXTwitter } from "react-icons/fa6";
-import { ImLinkedin2 } from "react-icons/im";
-import { FaFacebookF } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
+// import { FaXTwitter } from "react-icons/fa6";
+// import { ImLinkedin2 } from "react-icons/im";
+// import { FaFacebookF } from "react-icons/fa";
+// import { FaInstagram } from "react-icons/fa";
 import "./anasayfa.css";
 
 const App = () => {
@@ -352,10 +352,10 @@ const App = () => {
         </Container>
       </div>
 
-      <footer className="bg-dark py-5">
+      {/* <footer className="bg-dark py-5">
         <Container>
           <Row className="border-bottom">
-            <Col sm={12} md={6} className="w-100">
+            <Col sm={12} md={3} className="w-100">
               <h3 className="text-white">İletişim</h3>
               <FaXTwitter className="text-white" />
               <ImLinkedin2 className="text-white" />
@@ -363,7 +363,7 @@ const App = () => {
               <FaInstagram className="text-white" />
             </Col>
 
-            <Col sm={12} md={6} className="text-white">
+            <Col sm={12} md={3} className="text-white">
               <h3>Nasıl çalışır</h3>
               <ul>
                 <li>asd</li>
@@ -374,7 +374,7 @@ const App = () => {
               </ul>
             </Col>
 
-            <Col sm={12} md={6} className="text-white">
+            <Col sm={12} md={3} className="text-white">
               <h3>Çözümler</h3>
               <ul>
                 <li>asd</li>
@@ -385,7 +385,7 @@ const App = () => {
               </ul>
             </Col>
 
-            <Col sm={12} md={6} className="text-white">
+            <Col sm={12} md={3} className="text-white">
               <h3>Kaynaklar</h3>
               <ul>
                 <li>asd</li>
@@ -404,7 +404,7 @@ const App = () => {
             </ul>
           </div>
         </Container>
-      </footer>
+      </footer> */}
     </>
   );
 };
