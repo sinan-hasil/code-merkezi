@@ -5,17 +5,19 @@ import {
 } from "react-icons/md";
 import { FcApproval } from "react-icons/fc";
 import { IoArrowForward } from "react-icons/io5";
-import { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import Overlay from "react-bootstrap/Overlay";
+import Popover from "react-bootstrap/Popover";
 import eticaret from "./images/ozel-eticaret-yazilimi.jpg";
 import inovation from "./images/teknolojik-inovasyon.jpg";
 import software from "./images/sotware.avif";
 import software1 from "./images/work-editor-text-learn.jpg";
-import redbull from "./images/logo/png-clipart-red-bull-energy-drink-logo-graphics-brand-red-bull-company-carnivoran-thumbnail.png";
-import nike from "./images/logo/Nike-Logo.png";
-import shopier from "./images/logo/shopier_logo_1.png";
-import klarna from "./images/logo/Marketing_Badge_With_Clear_Space.png";
-import calvin from "./images/logo/pngimg.com - calvin_klein_PNG15.png";
-import shopify from "./images/logo/logo-bestpractices-old-small-9d48f4906860fcf2c2f4257abede5f6f8d6fbc8f6fe7473e06998c136d77d963.png";
+import eftal from "./images/logo/eftral logo.png";
+import savel from "./images/logo/savel-black.png";
+import fiat from "./images/logo/fiat_logo1_2x.png";
+import kia from "./images/logo/1fd96547asdasd-ogi-kia-removebg-preview-1.png";
+import dede from "./images/logo/dba3780e13722dc65bb9969f1ffef4f060e27510.png";
+import sigortam from "./images/logo/sigortamfast-new-logo-b4fbfc74-f.png";
 import ofis from "./images/atasehir-image2.png";
 // import { FaXTwitter } from "react-icons/fa6";
 // import { ImLinkedin2 } from "react-icons/im";
@@ -25,12 +27,22 @@ import "./anasayfa.css";
 
 const App = () => {
   const [show, setShow] = useState<boolean>(false);
+  const [showPopover, setShowPopover] = useState<boolean>(false);
   const [count, setCount] = useState<number>(0);
   const [count1, setCount1] = useState<number>(0);
   const [count2, setCount2] = useState<number>(0);
+  const [servicesDrop, setServicesDrop] = useState<boolean>(false);
+  const [target, setTarget] = useState<HTMLElement | null>(null);
+  const ref = useRef(null);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const toggleServices = (event: React.MouseEvent<HTMLLIElement>) => {
+    setServicesDrop(!servicesDrop);
+    setShowPopover(!showPopover);
+    setTarget(event.currentTarget);
+  };
 
   useEffect(() => {
     if (count < 40) {
@@ -73,8 +85,43 @@ const App = () => {
             <Col className="d-flex justify-content-end p-0">
               <div className="navbar-link pt-2 d-none d-sm-block">
                 <ul>
-                  <li>
-                    Hizmetlerimiz <MdOutlineKeyboardArrowDown />
+                  <li onClick={toggleServices}>
+                    Hizmetlerimiz
+                    <MdOutlineKeyboardArrowDown
+                      id="dropdown-basic"
+                      style={{
+                        transform: `${
+                          servicesDrop ? "rotate(180deg)" : "rotate(0deg)"
+                        }`,
+                        transition: "0.3s",
+                      }}
+                    />
+                    {servicesDrop ? (
+                      <>
+                        <div ref={ref}>
+                          <Overlay
+                            show={showPopover}
+                            target={target}
+                            placement="bottom"
+                            container={ref}
+                            containerPadding={90}
+                          >
+                            <Popover id="popover-contained">
+                              <Popover.Body className="px-2 py-2">
+                                <ul className="d-flex flex-column">
+                                  <li>Web Uygulamaları</li>
+                                  <li>Mobil Uygulama Geliştirme</li>
+                                  <li>Masaüstü Yazılım</li>
+                                  <li>Entegrasyon Hizmetleri</li>
+                                  <li>E-Ticaret Platformları Geliştirme</li>
+                                  <li>Ödeme Sistemleri Entegrasyonu</li>
+                                </ul>
+                              </Popover.Body>
+                            </Popover>
+                          </Overlay>
+                        </div>
+                      </>
+                    ) : null}
                   </li>
                   <li>
                     Misyonumuz <MdOutlineKeyboardArrowDown />
@@ -151,21 +198,21 @@ const App = () => {
         <Container>
           <div className="logos">
             <div className="logos-slide">
-              <img src={redbull} />
-              <img src={nike} />
-              <img src={shopier} />
-              <img src={shopify} />
-              <img src={calvin} />
-              <img src={klarna} />
+              <img src={eftal} />
+              <img src={savel} />
+              <img src={sigortam} />
+              <img src={dede} style={{ height: "100px" }} />
+              <img src={kia} style={{ height: "80px" }} />
+              <img src={fiat} style={{ height: "80px" }} />
             </div>
 
             <div className="logos-slide">
-              <img src={redbull} />
-              <img src={nike} />
-              <img src={shopier} />
-              <img src={shopify} />
-              <img src={calvin} />
-              <img src={klarna} />
+              <img src={eftal} />
+              <img src={savel} />
+              <img src={sigortam} />
+              <img src={dede} style={{ height: "100px" }} />
+              <img src={kia} style={{ height: "80px" }} />
+              <img src={fiat} style={{ height: "80px" }} />
             </div>
           </div>
         </Container>
@@ -267,7 +314,11 @@ const App = () => {
                 Bilgi almak için <IoArrowForward />
               </Button>
             </Col>
-            <Col sm={12} md={6} className="d-flex gap-5 d-flex justify-content-center">
+            <Col
+              sm={12}
+              md={6}
+              className="d-flex gap-5 d-flex justify-content-center"
+            >
               <Row>
                 <Col sm={12} md={8}>
                   <div className="backg1 mt-5">
@@ -316,7 +367,11 @@ const App = () => {
             <Col sm={12} md={6}>
               <img src={ofis} className="img-fluid rounded" />
             </Col>
-            <Col sm={12} md={6} className="d-flex flex-column justify-content-center gap-5">
+            <Col
+              sm={12}
+              md={6}
+              className="d-flex flex-column justify-content-center gap-5"
+            >
               <div className="contact-3">
                 <div>
                   <h4>İletişime geçelim</h4>
