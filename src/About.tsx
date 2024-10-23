@@ -168,15 +168,18 @@ const About = () => {
                 <Offcanvas.Body>
                   <ul>
                     <li>
-                      Hizmetlerimiz <MdOutlineKeyboardArrowDown />
-                    </li>
+                    <Nav.Link as={Link} className="text-dark" to={"/"}>
+                      Hizmetlerimiz
+                    </Nav.Link>
+                    </li>                    
                     <li>
-                      Misyonumuz <MdOutlineKeyboardArrowDown />
+                      <Nav.Link as={Link} className="text-dark" to={"/about"}>
+                      Hakkımzıda
+                    </Nav.Link>
                     </li>
-                    <li>
-                      hakkımızda <MdOutlineKeyboardArrowDown />
-                    </li>
-                    <li>İletişim</li>
+                    <li><Nav.Link as={Link} className="text-dark" to={"/contact"}>
+                      İletişim
+                    </Nav.Link></li>
                   </ul>
                 </Offcanvas.Body>
               </Offcanvas>
