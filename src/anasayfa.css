@@ -3,6 +3,21 @@
   box-sizing: border-box;
 }
 
+.wp {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  background-color: #24cc63;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 30px;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -279,5 +294,59 @@ footer .and li {
     flex-direction: column !important;
     align-items: center;
     gap: 5px;
+  }
+}
+.ulasin {
+  background-color: #647f94;
+}
+
+.iletisim {
+  text-align: center;
+}
+.iletisim ul {
+  list-style: none;
+  padding: 0;
+}
+.iletisim ul li {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.iletisim ul li svg {
+  font-size: 20px;
+}
+
+.back-img {
+  background-image: url("./images/karim-manjra-6ybGCLrzy_w-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 400px;
+  filter: grayscale(50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+footer {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 576px) {
+  .everything .card2, .everything .card3 {
+    margin-top: 30px !important;
+  }
+  .about img {
+    margin-top: 30px !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .about .resp-row {
+    display: none;
+  }
+  .about .button {
+    width: 70px !important;
   }
 }/*# sourceMappingURL=anasayfa.css.map */
