@@ -72,7 +72,7 @@ const About = () => {
   }, [count2]);
 
   const handleWhastapp = () => {
-    const phoneNumber = "+905072992776";
+    const phoneNumber = "+905335774740";
     const url =
       "https://wa.me/" +
       phoneNumber +
