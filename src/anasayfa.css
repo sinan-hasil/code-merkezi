@@ -4,9 +4,10 @@
 }
 
 .wp {
+  cursor: pointer;
   position: fixed;
-  bottom: 22px;
-  right: 22px;
+  bottom: 20px;
+  right: 2px;
   background-color: #24cc63;
   display: flex;
   align-items: center;
@@ -96,7 +97,7 @@ img {
 }
 .referances .logos-slide {
   display: inline-block;
-  animation: 35s slide infinite linear;
+  animation: 15s slide infinite linear;
 }
 .referances .logos-slide img {
   height: 50px;

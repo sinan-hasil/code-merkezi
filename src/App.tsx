@@ -1,15 +1,23 @@
-import { Button, Col, Container, Nav, Offcanvas, Row } from "react-bootstrap";
+import {
+  Button,
+  Col,
+  Container,
+  Modal,
+  Nav,
+  Offcanvas,
+  Overlay,
+  Popover,
+  Row,
+} from "react-bootstrap";
 import {
   MdOutlineKeyboardArrowDown,
   MdKeyboardArrowRight,
 } from "react-icons/md";
 import { FcApproval } from "react-icons/fc";
 import { IoArrowForward } from "react-icons/io5";
-import React, { useEffect, useRef, useState } from "react";
-import Overlay from "react-bootstrap/Overlay";
-import Popover from "react-bootstrap/Popover";
+import { useEffect, useRef, useState } from "react";
 import eticaret from "./images/austin-distel-744oGeqpxPQ-unsplash.jpg";
-import inovation from "./images/teknolojik-inovasyon.jpg";
+import inovation from "./images/asdasd.png";
 import software from "./images/altumcode-PNbDkQ2DDgM-unsplash.jpg";
 import yazilim from "./images/niclas-illg-FJ5e_2f96h4-unsplash.jpg";
 import yazilim1 from "./images/nubelson-fernandes-UcYBL5V0xWQ-unsplash.jpg";
@@ -25,31 +33,99 @@ import logo from "./images/Code Merkezi.png";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaWhatsapp } from "react-icons/fa";
-
-// import { FaXTwitter } from "react-icons/fa6";
-// import { ImLinkedin2 } from "react-icons/im";
-// import { FaFacebookF } from "react-icons/fa";
-// import { FaInstagram } from "react-icons/fa";
+import modal1 from "./images/firmbee-com-ir5lIkVFqC4-unsplash.jpg";
+import modal2 from "./images/raymond-pang-mW0ioxoqFjo-unsplash.jpg";
+import modal3 from "./images/austin-distel-wawEfYdpkag-unsplash.jpg";
 import "./anasayfa.css";
 import { Link } from "react-router-dom";
+
+interface Service {
+  title: string;
+  description: string;
+  imageUrl: string;
+  asd: string;
+}
+
+// Event handler tipleri
+type ServiceClickHandler = (service: Service) => void;
+type ToggleServicesHandler = (event: React.MouseEvent<HTMLLIElement>) => void;
+
+const services: Service[] = [
+  {
+    title: "Web Uygulamaları",
+    description:
+      "Günümüzde web uygulamaları, işletmelerin dijital dönüşüm süreçlerinde önemli bir rol oynamaktadır. Kullanıcıların ihtiyaçlarına yönelik etkileşimli ve dinamik deneyimler sunarak, bilgiye erişimi kolaylaştırmakta ve iş süreçlerini optimize etmektedir.",
+    imageUrl: modal1,
+    asd: "Web uygulamaları, farklı platform ve cihazlarda erişilebilir olmaları sayesinde, kullanıcılar için büyük bir esneklik sunar. Bu uygulamalar, işletmelerin hizmetlerini geniş bir kitleye ulaştırmalarını sağlayarak müşteri memnuniyetini artırır."
+  },
+  {
+    title: "Mobil Uygulama Geliştirme",
+    description: "Mobil uygulamalar, akıllı telefonlar ve tabletler gibi taşınabilir cihazlarda çalışan yazılımlardır. Günümüzde, kullanıcıların günlük yaşamlarını kolaylaştıran, bilgiye hızlı erişim sağlayan ve çeşitli hizmetlere ulaşmalarını mümkün kılan bu uygulamalar, teknolojinin önemli bir parçası haline gelmiştir.",
+    imageUrl: modal2,
+    asd: "Mobil uygulamalar, işletmelere müşterileriyle doğrudan etkileşim kurma imkanı sunar. Kullanıcı deneyimini artırarak, ürün ve hizmetleri daha etkili bir şekilde tanıtma ve satış yapma fırsatı yaratır. Ayrıca, kullanıcıların ihtiyaçlarına göre kişiselleştirilmiş deneyimler sunarak bağlılıklarını artırır."
+  },
+  {
+    title: "Masaüstü Yazılım",
+    description: "Masaüstü yazılım, kişisel bilgisayarlar ve dizüstü bilgisayarlar üzerinde çalışan uygulamalardır. Bu yazılımlar, kullanıcıların bilgisayar donanımının tüm kaynaklarından tam anlamıyla faydalanarak güçlü ve kapsamlı çözümler sunmasını sağlar.",
+    imageUrl: modal3,
+    asd: "Masaüstü yazılımlar, genellikle kullanıcıların daha karmaşık ve yoğun işlem gerektiren görevleri gerçekleştirmesine olanak tanır. Bu yazılımlar, özellikle profesyonel alanlarda ve özel amaçlar için tasarlanmış uygulamalar olarak büyük önem taşır."
+  },
+  {
+    title: "Entegrasyon Hizmetleri",
+    description: "Entegrasyon hizmetleri, farklı yazılım sistemleri, uygulamalar ve veri kaynakları arasında uyum ve etkileşim sağlamak amacıyla sunulan çözümlerdir. İşletmelerin teknolojik altyapılarını optimize etmelerine ve iş süreçlerini daha verimli hale getirmelerine yardımcı olur.",
+    imageUrl: "/api/placeholder/400/300",
+    asd: "Günümüzde birçok işletme, farklı sistemlerin ve uygulamaların bir arada çalışmasını gerektiren karmaşık bir ortamda faaliyet göstermektedir. Entegrasyon hizmetleri, bu sistemler arasında veri akışını sağlamak, iş süreçlerini otomatikleştirmek ve bilgi paylaşımını kolaylaştırmak için kritik bir rol oynar."
+  },
+  {
+    title: "E-Ticaret Platformları Geliştirme",
+    description: "E-ticaret platformları, işletmelerin ürün ve hizmetlerini çevrimiçi olarak sunmalarını sağlayan yazılım çözümleridir. Bu platformlar, müşterilere kolay bir alışveriş deneyimi sunarak, işletmelerin dijital pazardaki varlıklarını güçlendirmelerine yardımcı olur.",
+    imageUrl: "/api/placeholder/400/300",
+    asd: "Gelişen teknoloji ile birlikte, e-ticaret sektörü hızla büyümekte ve daha fazla işletme çevrimiçi satış yapmayı tercih etmektedir. E-ticaret platformları, sadece satış yapmakla kalmaz; aynı zamanda stok yönetimi, müşteri ilişkileri yönetimi (CRM), analitik raporlama ve pazarlama otomasyonu gibi birçok önemli işlevi de entegre eder."
+  },
+  {
+    title: "Ödeme Sistemleri Entegrasyonu",
+    description: "Ödeme sistemleri entegrasyonu, e-ticaret ve çevrimiçi hizmet sağlayıcıları için hayati bir süreçtir. Bu entegrasyon, müşterilerin alışveriş yaparken güvenli ve kolay bir şekilde ödeme yapmalarını sağlamak için gerekli olan teknolojik altyapıyı oluşturur.",
+    imageUrl: "/api/placeholder/400/300",
+    asd: "Günümüzde, tüketicilerin alışveriş yaparken farklı ödeme yöntemlerine erişim beklediği bir ortamda, işletmelerin bu beklentilere yanıt verebilmesi önemlidir. Kredi kartları, banka kartları, dijital cüzdanlar ve kripto paralar gibi çeşitli ödeme seçeneklerinin entegrasyonu, kullanıcı deneyimini iyileştirir ve dönüşüm oranlarını artırır."
+  },
+];
 
 const App = () => {
   const [show, setShow] = useState<boolean>(false);
   const [showPopover, setShowPopover] = useState<boolean>(false);
   const [servicesDrop, setServicesDrop] = useState<boolean>(false);
+  const [target, setTarget] = useState<HTMLElement | null>(null);
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const [showModal, setShowModal] = useState<boolean>(false);
   const [count, setCount] = useState<number>(0);
   const [count1, setCount1] = useState<number>(0);
   const [count2, setCount2] = useState<number>(0);
-  const [target, setTarget] = useState<HTMLElement | null>(null);
-  const ref = useRef(null);
+
+  const ref = useRef<HTMLDivElement>(null);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const toggleServices = (event: React.MouseEvent<HTMLLIElement>) => {
+  const toggleServices: ToggleServicesHandler = (event) => {
     setServicesDrop(!servicesDrop);
     setShowPopover(!showPopover);
     setTarget(event.currentTarget);
+    
+  };
+
+  const handleServiceClick: ServiceClickHandler = (service) => {
+    setSelectedService(service);
+    setShowModal(true);
+    setServicesDrop(false);
+    setShowPopover(false);
+    
+  };
+  
+
+  const handleWhatsapp = () => {
+    const phoneNumber = "+905335774740";
+    const url = `https://wa.me/${phoneNumber}?text=Merhaba! Ürünleriniz hakkında bilgi almak istiyorum.`;
+    window.open(url, "_blank")?.focus();
   };
 
   useEffect(() => {
@@ -57,7 +133,6 @@ const App = () => {
       const timer = setInterval(() => {
         setCount((prevCount) => prevCount + 1);
       }, 30);
-
       return () => clearInterval(timer);
     }
   }, [count]);
@@ -67,7 +142,6 @@ const App = () => {
       const timer = setInterval(() => {
         setCount1((prevCount1) => prevCount1 + 1);
       }, 2);
-
       return () => clearInterval(timer);
     }
   }, [count1]);
@@ -77,24 +151,12 @@ const App = () => {
       const timer = setInterval(() => {
         setCount2((prevCount2) => prevCount2 + 1);
       }, 30);
-
       return () => clearInterval(timer);
     }
   }, [count2]);
-
-  const handleWhastapp = () => {
-    const phoneNumber = "+905335774740";
-    const url =
-      "https://wa.me/" +
-      phoneNumber +
-      "?text=" +
-      "Merhaba! Ürünleriniz hakkında bilgi almak istiyorum.";
-    window.open(url, "_blank")?.focus();
-  };
-
   return (
     <>
-      <div className="wp" onClick={handleWhastapp}>
+      <div className="wp" onClick={handleWhatsapp}>
         <FaWhatsapp />
       </div>
       <Container fluid className="nav">
@@ -102,56 +164,91 @@ const App = () => {
           <Row>
             <Col>
               <Nav.Link as={Link} to={"/"}>
-                <img src={logo} width={100} style={{ cursor: "pointer" }} />
+                <img src={logo} width={120} style={{ cursor: "pointer" }} />
               </Nav.Link>
             </Col>
             <Col className="d-flex justify-content-end align-items-center p-0">
               <div className="navbar-link pt-2 d-none d-sm-block">
                 <ul>
                   <li
+                    className="position-relative"
                     onMouseEnter={toggleServices}
                     onMouseLeave={() => {
                       setServicesDrop(false);
                       setShowPopover(false);
                     }}
                   >
-                    Hizmetlerimiz
-                    <MdOutlineKeyboardArrowDown
-                      id="dropdown-basic"
-                      style={{
-                        transform: `${
-                          servicesDrop ? "rotate(180deg)" : "rotate(0deg)"
-                        }`,
-                        transition: "0.3s",
-                      }}
-                    />
-                    {servicesDrop ? (
-                      <>
-                        <div ref={ref}>
-                          <Overlay
-                            show={showPopover}
-                            target={target}
-                            placement="bottom"
-                            container={ref}
-                            containerPadding={90}
-                          >
-                            <Popover id="popover-contained">
-                              <Popover.Body className="px-2 py-2">
-                                <ul className="d-flex flex-column">
-                                  <li>Web Uygulamaları</li>
-                                  <li>Mobil Uygulama Geliştirme</li>
-                                  <li>Masaüstü Yazılım</li>
-                                  <li>Entegrasyon Hizmetleri</li>
-                                  <li>E-Ticaret Platformları Geliştirme</li>
-                                  <li>Ödeme Sistemleri Entegrasyonu</li>
-                                </ul>
-                              </Popover.Body>
-                            </Popover>
-                          </Overlay>
-                        </div>
-                      </>
-                    ) : null}
+                    <div
+                      className="d-flex align-items-center gap-1"
+                      style={{ cursor: "pointer" }}
+                    >
+                      Hizmetlerimiz
+                      <MdOutlineKeyboardArrowDown
+                        style={{
+                          transform: `${
+                            servicesDrop ? "rotate(180deg)" : "rotate(0deg)"
+                          }`,
+                          transition: "0.3s",
+                        }}
+                      />
+                    </div>
+
+                    <div ref={ref}>
+                      <Overlay
+                        show={showPopover}
+                        target={target}
+                        placement="bottom"
+                        container={ref}
+                        containerPadding={30}
+                      >
+                        <Popover
+                          id="popover-contained"
+                          style={{ width: "200px" }}
+                        >
+                          <Popover.Body className="p-0">
+                            <ul className="list-unstyled m-0 d-flex flex-column">
+                              {services.map((service) => (
+                                <li
+                                  key={service.title}
+                                  className="px-3 py-2 hover-bg-light"
+                                  style={{ cursor: "pointer" }}
+                                  onClick={() => handleServiceClick(service)}
+                                >
+                                  {service.title}
+                                </li>
+                              ))}
+                            </ul>
+                          </Popover.Body>
+                        </Popover>
+                      </Overlay>
+                    </div>
                   </li>
+
+                  <Modal
+                    show={showModal}
+                    onHide={() => setShowModal(false)}
+                    
+                  >
+                    <Modal.Header closeButton>
+                      <Modal.Title>{selectedService?.title}</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body className="d-flex flex-column gap-5">
+                      <div className="text-center mb-3">
+                        <img
+                          src={selectedService?.imageUrl}
+                          alt={selectedService?.title}
+                          className="img-fluid rounded"
+                          style={{
+                            height: "100%",
+                            objectFit: "cover",
+                            width: "100%",
+                          }}
+                        />
+                      </div>
+                      <p>{selectedService?.description}</p>
+                      <p>{selectedService?.asd}</p>
+                    </Modal.Body>
+                  </Modal>
 
                   <li>
                     <Nav.Link as={Link} to={"/About"} className="text-dark">
@@ -179,18 +276,20 @@ const App = () => {
                 <Offcanvas.Body>
                   <ul>
                     <li>
-                    <Nav.Link as={Link} className="text-dark" to={"/"}>
-                      Hizmetlerimiz
-                    </Nav.Link>
-                    </li>                    
+                      <Nav.Link as={Link} className="text-dark" to={"/"}>
+                        Hizmetlerimiz
+                      </Nav.Link>
+                    </li>
                     <li>
                       <Nav.Link as={Link} className="text-dark" to={"/about"}>
-                      Hakkımzıda
-                    </Nav.Link>
+                        Hakkımzıda
+                      </Nav.Link>
                     </li>
-                    <li><Nav.Link as={Link} className="text-dark" to={"/contact"}>
-                      İletişim
-                    </Nav.Link></li>
+                    <li>
+                      <Nav.Link as={Link} className="text-dark" to={"/contact"}>
+                        İletişim
+                      </Nav.Link>
+                    </li>
                   </ul>
                 </Offcanvas.Body>
               </Offcanvas>
@@ -211,16 +310,16 @@ const App = () => {
               <div className="mb-4 mt-3">
                 <div>
                   <FcApproval /> Modern tasarımlar ve kullanıcı dostu
-                  arayüzlerle markanızı etkileyici bir şekilde online dünyada
-                  temsil edin.
+                  arayüzlerle markanızı etkileyici <br /> bir şekilde online
+                  dünyada temsil edin.
                 </div>
                 <div className="mt-3">
                   <FcApproval /> Kullanıcıların her an erişebileceği, işlevsel
-                  ve hızlı mobil uygulamalarla etkileşimi artırın.
+                  ve hızlı mobil uygulamalarla <br /> etkileşimi artırın.
                 </div>
                 <div className="mt-3">
                   <FcApproval /> Müşterilerinizi düşünerek, kullanıcı deneyimini
-                  ön planda tutan projeler geliştirin.
+                  ön planda tutan <br /> projeler geliştirin.
                 </div>
               </div>
               <Link to={"/services"}>
@@ -518,9 +617,7 @@ const App = () => {
       </div>
 
       <footer className="py-3 bg-dark text-white ">
-        <Container>
-        © Code Merkezi Tüm Hakları Saklıdır
-        </Container>
+        <Container>© Code Merkezi Tüm Hakları Saklıdır</Container>
       </footer>
     </>
   );
