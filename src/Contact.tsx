@@ -23,7 +23,6 @@ import modal2 from "./images/raymond-pang-mW0ioxoqFjo-unsplash.jpg";
 import modal3 from "./images/austin-distel-wawEfYdpkag-unsplash.jpg";
 import modal4 from "./images/shoper-slLo94wES2M-unsplash.jpg";
 import modal5 from "./images/sistem-entegrasyon-hizmetleri.jpg";
-import modal6 from "./images/cardmapr-nl-XH2JFgT4Abc-unsplash.jpg";
 interface Service {
   title: string;
   description: string;
@@ -66,12 +65,7 @@ const services: Service[] = [
     imageUrl: modal4,
     asd: "Gelişen teknoloji ile birlikte, e-ticaret sektörü hızla büyümekte ve daha fazla işletme çevrimiçi satış yapmayı tercih etmektedir. E-ticaret platformları, sadece satış yapmakla kalmaz; aynı zamanda stok yönetimi, müşteri ilişkileri yönetimi (CRM), analitik raporlama ve pazarlama otomasyonu gibi birçok önemli işlevi de entegre eder."
   },
-  {
-    title: "Ödeme Sistemleri Entegrasyonu",
-    description: "Ödeme sistemleri entegrasyonu, e-ticaret ve çevrimiçi hizmet sağlayıcıları için hayati bir süreçtir. Bu entegrasyon, müşterilerin alışveriş yaparken güvenli ve kolay bir şekilde ödeme yapmalarını sağlamak için gerekli olan teknolojik altyapıyı oluşturur.",
-    imageUrl: modal6,
-    asd: "Günümüzde, tüketicilerin alışveriş yaparken farklı ödeme yöntemlerine erişim beklediği bir ortamda, işletmelerin bu beklentilere yanıt verebilmesi önemlidir. Kredi kartları, banka kartları, dijital cüzdanlar ve kripto paralar gibi çeşitli ödeme seçeneklerinin entegrasyonu, kullanıcı deneyimini iyileştirir ve dönüşüm oranlarını artırır."
-  },
+ 
 ];
 
 const Contact = () => {
@@ -215,7 +209,7 @@ const Contact = () => {
 
                   <li>
                     <Nav.Link as={Link} to={"/About"} className="text-dark">
-                      hakkımızda
+                      Hakkımızda
                     </Nav.Link>
                   </li>
                   <li>

@@ -28,6 +28,7 @@ import fiat from "./images/logo/fiat_logo1_2x.png";
 import kia from "./images/logo/1fd96547asdasd-ogi-kia-removebg-preview-1.png";
 import dede from "./images/logo/dba3780e13722dc65bb9969f1ffef4f060e27510.png";
 import sigortam from "./images/logo/sigortamfast-new-logo-b4fbfc74-f.png";
+import carman from "./images/logo/WhatsApp-Gorsel-2023-06-02-saat-18-300x145.png";
 import ofis from "./images/carl-heyerdahl-KE0nC8-58MQ-unsplash.jpg";
 import logo from "./images/Code Merkezi.png";
 import { IoIosCheckmarkCircle } from "react-icons/io";
@@ -38,7 +39,6 @@ import modal2 from "./images/raymond-pang-mW0ioxoqFjo-unsplash.jpg";
 import modal3 from "./images/austin-distel-wawEfYdpkag-unsplash.jpg";
 import modal4 from "./images/shoper-slLo94wES2M-unsplash.jpg";
 import modal5 from "./images/sistem-entegrasyon-hizmetleri.jpg";
-import modal6 from "./images/cardmapr-nl-XH2JFgT4Abc-unsplash.jpg";
 import { Link } from "react-router-dom";
 import "./anasayfa.css";
 
@@ -59,37 +59,35 @@ const services: Service[] = [
     description:
       "Günümüzde web uygulamaları, işletmelerin dijital dönüşüm süreçlerinde önemli bir rol oynamaktadır. Kullanıcıların ihtiyaçlarına yönelik etkileşimli ve dinamik deneyimler sunarak, bilgiye erişimi kolaylaştırmakta ve iş süreçlerini optimize etmektedir.",
     imageUrl: modal1,
-    asd: "Web uygulamaları, farklı platform ve cihazlarda erişilebilir olmaları sayesinde, kullanıcılar için büyük bir esneklik sunar. Bu uygulamalar, işletmelerin hizmetlerini geniş bir kitleye ulaştırmalarını sağlayarak müşteri memnuniyetini artırır."
+    asd: "Web uygulamaları, farklı platform ve cihazlarda erişilebilir olmaları sayesinde, kullanıcılar için büyük bir esneklik sunar. Bu uygulamalar, işletmelerin hizmetlerini geniş bir kitleye ulaştırmalarını sağlayarak müşteri memnuniyetini artırır.",
   },
   {
     title: "Mobil Uygulama Geliştirme",
-    description: "Mobil uygulamalar, akıllı telefonlar ve tabletler gibi taşınabilir cihazlarda çalışan yazılımlardır. Günümüzde, kullanıcıların günlük yaşamlarını kolaylaştıran, bilgiye hızlı erişim sağlayan ve çeşitli hizmetlere ulaşmalarını mümkün kılan bu uygulamalar, teknolojinin önemli bir parçası haline gelmiştir.",
+    description:
+      "Mobil uygulamalar, akıllı telefonlar ve tabletler gibi taşınabilir cihazlarda çalışan yazılımlardır. Günümüzde, kullanıcıların günlük yaşamlarını kolaylaştıran, bilgiye hızlı erişim sağlayan ve çeşitli hizmetlere ulaşmalarını mümkün kılan bu uygulamalar, teknolojinin önemli bir parçası haline gelmiştir.",
     imageUrl: modal2,
-    asd: "Mobil uygulamalar, işletmelere müşterileriyle doğrudan etkileşim kurma imkanı sunar. Kullanıcı deneyimini artırarak, ürün ve hizmetleri daha etkili bir şekilde tanıtma ve satış yapma fırsatı yaratır. Ayrıca, kullanıcıların ihtiyaçlarına göre kişiselleştirilmiş deneyimler sunarak bağlılıklarını artırır."
+    asd: "Mobil uygulamalar, işletmelere müşterileriyle doğrudan etkileşim kurma imkanı sunar. Kullanıcı deneyimini artırarak, ürün ve hizmetleri daha etkili bir şekilde tanıtma ve satış yapma fırsatı yaratır. Ayrıca, kullanıcıların ihtiyaçlarına göre kişiselleştirilmiş deneyimler sunarak bağlılıklarını artırır.",
   },
   {
     title: "Masaüstü Yazılım",
-    description: "Masaüstü yazılım, kişisel bilgisayarlar ve dizüstü bilgisayarlar üzerinde çalışan uygulamalardır. Bu yazılımlar, kullanıcıların bilgisayar donanımının tüm kaynaklarından tam anlamıyla faydalanarak güçlü ve kapsamlı çözümler sunmasını sağlar.",
+    description:
+      "Masaüstü yazılım, kişisel bilgisayarlar ve dizüstü bilgisayarlar üzerinde çalışan uygulamalardır. Bu yazılımlar, kullanıcıların bilgisayar donanımının tüm kaynaklarından tam anlamıyla faydalanarak güçlü ve kapsamlı çözümler sunmasını sağlar.",
     imageUrl: modal3,
-    asd: "Masaüstü yazılımlar, genellikle kullanıcıların daha karmaşık ve yoğun işlem gerektiren görevleri gerçekleştirmesine olanak tanır. Bu yazılımlar, özellikle profesyonel alanlarda ve özel amaçlar için tasarlanmış uygulamalar olarak büyük önem taşır."
+    asd: "Masaüstü yazılımlar, genellikle kullanıcıların daha karmaşık ve yoğun işlem gerektiren görevleri gerçekleştirmesine olanak tanır. Bu yazılımlar, özellikle profesyonel alanlarda ve özel amaçlar için tasarlanmış uygulamalar olarak büyük önem taşır.",
   },
   {
     title: "Entegrasyon Hizmetleri",
-    description: "Entegrasyon hizmetleri, farklı yazılım sistemleri, uygulamalar ve veri kaynakları arasında uyum ve etkileşim sağlamak amacıyla sunulan çözümlerdir. İşletmelerin teknolojik altyapılarını optimize etmelerine ve iş süreçlerini daha verimli hale getirmelerine yardımcı olur.",
+    description:
+      "Entegrasyon hizmetleri, farklı yazılım sistemleri, uygulamalar ve veri kaynakları arasında uyum ve etkileşim sağlamak amacıyla sunulan çözümlerdir. İşletmelerin teknolojik altyapılarını optimize etmelerine ve iş süreçlerini daha verimli hale getirmelerine yardımcı olur.",
     imageUrl: modal5,
-    asd: "Günümüzde birçok işletme, farklı sistemlerin ve uygulamaların bir arada çalışmasını gerektiren karmaşık bir ortamda faaliyet göstermektedir. Entegrasyon hizmetleri, bu sistemler arasında veri akışını sağlamak, iş süreçlerini otomatikleştirmek ve bilgi paylaşımını kolaylaştırmak için kritik bir rol oynar."
+    asd: "Günümüzde birçok işletme, farklı sistemlerin ve uygulamaların bir arada çalışmasını gerektiren karmaşık bir ortamda faaliyet göstermektedir. Entegrasyon hizmetleri, bu sistemler arasında veri akışını sağlamak, iş süreçlerini otomatikleştirmek ve bilgi paylaşımını kolaylaştırmak için kritik bir rol oynar.",
   },
   {
     title: "E-Ticaret Platformları Geliştirme",
-    description: "E-ticaret platformları, işletmelerin ürün ve hizmetlerini çevrimiçi olarak sunmalarını sağlayan yazılım çözümleridir. Bu platformlar, müşterilere kolay bir alışveriş deneyimi sunarak, işletmelerin dijital pazardaki varlıklarını güçlendirmelerine yardımcı olur.",
+    description:
+      "E-ticaret platformları, işletmelerin ürün ve hizmetlerini çevrimiçi olarak sunmalarını sağlayan yazılım çözümleridir. Bu platformlar, müşterilere kolay bir alışveriş deneyimi sunarak, işletmelerin dijital pazardaki varlıklarını güçlendirmelerine yardımcı olur.",
     imageUrl: modal4,
-    asd: "Gelişen teknoloji ile birlikte, e-ticaret sektörü hızla büyümekte ve daha fazla işletme çevrimiçi satış yapmayı tercih etmektedir. E-ticaret platformları, sadece satış yapmakla kalmaz; aynı zamanda stok yönetimi, müşteri ilişkileri yönetimi (CRM), analitik raporlama ve pazarlama otomasyonu gibi birçok önemli işlevi de entegre eder."
-  },
-  {
-    title: "Ödeme Sistemleri Entegrasyonu",
-    description: "Ödeme sistemleri entegrasyonu, e-ticaret ve çevrimiçi hizmet sağlayıcıları için hayati bir süreçtir. Bu entegrasyon, müşterilerin alışveriş yaparken güvenli ve kolay bir şekilde ödeme yapmalarını sağlamak için gerekli olan teknolojik altyapıyı oluşturur.",
-    imageUrl: modal6,
-    asd: "Günümüzde, tüketicilerin alışveriş yaparken farklı ödeme yöntemlerine erişim beklediği bir ortamda, işletmelerin bu beklentilere yanıt verebilmesi önemlidir. Kredi kartları, banka kartları, dijital cüzdanlar ve kripto paralar gibi çeşitli ödeme seçeneklerinin entegrasyonu, kullanıcı deneyimini iyileştirir ve dönüşüm oranlarını artırır."
+    asd: "Gelişen teknoloji ile birlikte, e-ticaret sektörü hızla büyümekte ve daha fazla işletme çevrimiçi satış yapmayı tercih etmektedir. E-ticaret platformları, sadece satış yapmakla kalmaz; aynı zamanda stok yönetimi, müşteri ilişkileri yönetimi (CRM), analitik raporlama ve pazarlama otomasyonu gibi birçok önemli işlevi de entegre eder.",
   },
 ];
 
@@ -113,7 +111,6 @@ const App = () => {
     setServicesDrop(!servicesDrop);
     setShowPopover(!showPopover);
     setTarget(event.currentTarget);
-    
   };
 
   const handleServiceClick: ServiceClickHandler = (service) => {
@@ -121,9 +118,7 @@ const App = () => {
     setShowModal(true);
     setServicesDrop(false);
     setShowPopover(false);
-    
   };
-  
 
   const handleWhatsapp = () => {
     const phoneNumber = "+905335774740";
@@ -227,11 +222,7 @@ const App = () => {
                     </div>
                   </li>
 
-                  <Modal
-                    show={showModal}
-                    onHide={() => setShowModal(false)}
-                    
-                  >
+                  <Modal show={showModal} onHide={() => setShowModal(false)}>
                     <Modal.Header closeButton>
                       <Modal.Title>{selectedService?.title}</Modal.Title>
                     </Modal.Header>
@@ -255,7 +246,7 @@ const App = () => {
 
                   <li>
                     <Nav.Link as={Link} to={"/About"} className="text-dark">
-                      hakkımızda
+                      Hakkımızda
                     </Nav.Link>
                   </li>
                   <li>
@@ -348,18 +339,26 @@ const App = () => {
               <a href="https://sigortamfast.com/">
                 <img src={sigortam} />
               </a>
-              <img src={dede} style={{ height: "100px" }} />
+              <a href="https://otoadam.com/carman-ikinciel-yetki-formu/">
+                <img src={carman} />
+              </a>
+              <a href="https://www.otoshops.com/otoshops_dede_otomotiv?gad_source=1&gclid=Cj0KCQjw4Oe4BhCcARIsADQ0csmOyIF7jYJ6aCi0Op-bjgIc9Z4ZFlj32Cbzh4l23O6P6AksG9bZ7iQaAm5zEALw_wcB">
+                <img src={dede} style={{ height: "100px" }} />
+              </a>
               <a href="https://www.kia.com/tr/satis-merkezi/yetkili-servis-satici/efsane-otomotiv.html">
                 <img src={kia} style={{ height: "80px" }} />
               </a>
-              <a href="https://efsane.fiatbayi.com.tr/">
+              <a href="https://efsane.fiatbayi.com.tr/" className="me-5">
                 <img src={fiat} style={{ height: "80px" }} />
               </a>
             </div>
 
             <div className="logos-slide">
-              <a href="https://eftalfilo.com/">
+              <a href="https://eftalfilo.com/" className="ms-5">
                 <img src={eftal} />
+              </a>
+              <a href="https://otoadam.com/carman-ikinciel-yetki-formu/">
+                <img src={carman} />
               </a>
               <a href="http://savelglobal.com/?category=Ta%C5%9F%C4%B1nabilir%20%C4%B0stasyon">
                 <img src={savel} />
@@ -370,7 +369,9 @@ const App = () => {
               <a href="https://www.kia.com/tr/satis-merkezi/yetkili-servis-satici/efsane-otomotiv.html">
                 <img src={kia} style={{ height: "80px" }} />
               </a>
-              <img src={dede} style={{ height: "100px" }} />
+              <a href="https://www.otoshops.com/otoshops_dede_otomotiv?gad_source=1&gclid=Cj0KCQjw4Oe4BhCcARIsADQ0csmOyIF7jYJ6aCi0Op-bjgIc9Z4ZFlj32Cbzh4l23O6P6AksG9bZ7iQaAm5zEALw_wcB">
+                <img src={dede} style={{ height: "100px" }} />
+              </a>
               <a href="https://efsane.fiatbayi.com.tr/">
                 <img src={fiat} style={{ height: "80px" }} />
               </a>

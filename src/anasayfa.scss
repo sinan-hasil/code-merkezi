@@ -65,7 +65,7 @@ img {
   h1 {
     color: #144c7d;
   }
-  
+
   @keyframes slide {
     from {
       transform: translateX(0);
@@ -81,7 +81,8 @@ img {
     background: white;
     white-space: nowrap;
     position: relative;
-
+    display: flex; /* Flex kullanımı eklendi */
+    
     &:before,
     &:after {
       position: absolute;
@@ -108,12 +109,12 @@ img {
   }
 
   .logos-slide {
-    display: inline-block;
+    display: flex;
     animation: 15s slide infinite linear;
 
     img {
-      height: 50px;
-      margin: 0 40px;
+      height: 80px; 
+      margin: 0 10px;
     }
   }
 }
