@@ -136,10 +136,10 @@ const App = () => {
   }, [count]);
 
   useEffect(() => {
-    if (count1 < 500) {
+    if (count1 < 250) {
       const timer = setInterval(() => {
         setCount1((prevCount1) => prevCount1 + 1);
-      }, 2);
+      }, 3);
       return () => clearInterval(timer);
     }
   }, [count1]);
@@ -354,7 +354,7 @@ const App = () => {
             </div>
 
             <div className="logos-slide">
-              <a href="https://eftalfilo.com/" className="ms-5">
+              <a href="https://eftalfilo.com/" style={{marginLeft: "100px"}}>
                 <img src={eftal} />
               </a>
               <a href="https://otoadam.com/carman-ikinciel-yetki-formu/">
@@ -490,7 +490,7 @@ const App = () => {
             </div>
             <div className="text-white">
               <p className="fs-1">{count1}+</p>
-              <span>500'ün üzerinde mutlu müşteri</span>
+              <span>250'ün üzerinde mutlu müşteri</span>
             </div>
             <div className="text-white">
               <p className="fs-1">{count2} saat</p>
