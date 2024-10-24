@@ -36,8 +36,11 @@ import { FaWhatsapp } from "react-icons/fa";
 import modal1 from "./images/firmbee-com-ir5lIkVFqC4-unsplash.jpg";
 import modal2 from "./images/raymond-pang-mW0ioxoqFjo-unsplash.jpg";
 import modal3 from "./images/austin-distel-wawEfYdpkag-unsplash.jpg";
-import "./anasayfa.css";
+import modal4 from "./images/shoper-slLo94wES2M-unsplash.jpg";
+import modal5 from "./images/sistem-entegrasyon-hizmetleri.jpg";
+import modal6 from "./images/cardmapr-nl-XH2JFgT4Abc-unsplash.jpg";
 import { Link } from "react-router-dom";
+import "./anasayfa.css";
 
 interface Service {
   title: string;
@@ -73,19 +76,19 @@ const services: Service[] = [
   {
     title: "Entegrasyon Hizmetleri",
     description: "Entegrasyon hizmetleri, farklı yazılım sistemleri, uygulamalar ve veri kaynakları arasında uyum ve etkileşim sağlamak amacıyla sunulan çözümlerdir. İşletmelerin teknolojik altyapılarını optimize etmelerine ve iş süreçlerini daha verimli hale getirmelerine yardımcı olur.",
-    imageUrl: "/api/placeholder/400/300",
+    imageUrl: modal5,
     asd: "Günümüzde birçok işletme, farklı sistemlerin ve uygulamaların bir arada çalışmasını gerektiren karmaşık bir ortamda faaliyet göstermektedir. Entegrasyon hizmetleri, bu sistemler arasında veri akışını sağlamak, iş süreçlerini otomatikleştirmek ve bilgi paylaşımını kolaylaştırmak için kritik bir rol oynar."
   },
   {
     title: "E-Ticaret Platformları Geliştirme",
     description: "E-ticaret platformları, işletmelerin ürün ve hizmetlerini çevrimiçi olarak sunmalarını sağlayan yazılım çözümleridir. Bu platformlar, müşterilere kolay bir alışveriş deneyimi sunarak, işletmelerin dijital pazardaki varlıklarını güçlendirmelerine yardımcı olur.",
-    imageUrl: "/api/placeholder/400/300",
+    imageUrl: modal4,
     asd: "Gelişen teknoloji ile birlikte, e-ticaret sektörü hızla büyümekte ve daha fazla işletme çevrimiçi satış yapmayı tercih etmektedir. E-ticaret platformları, sadece satış yapmakla kalmaz; aynı zamanda stok yönetimi, müşteri ilişkileri yönetimi (CRM), analitik raporlama ve pazarlama otomasyonu gibi birçok önemli işlevi de entegre eder."
   },
   {
     title: "Ödeme Sistemleri Entegrasyonu",
     description: "Ödeme sistemleri entegrasyonu, e-ticaret ve çevrimiçi hizmet sağlayıcıları için hayati bir süreçtir. Bu entegrasyon, müşterilerin alışveriş yaparken güvenli ve kolay bir şekilde ödeme yapmalarını sağlamak için gerekli olan teknolojik altyapıyı oluşturur.",
-    imageUrl: "/api/placeholder/400/300",
+    imageUrl: modal6,
     asd: "Günümüzde, tüketicilerin alışveriş yaparken farklı ödeme yöntemlerine erişim beklediği bir ortamda, işletmelerin bu beklentilere yanıt verebilmesi önemlidir. Kredi kartları, banka kartları, dijital cüzdanlar ve kripto paralar gibi çeşitli ödeme seçeneklerinin entegrasyonu, kullanıcı deneyimini iyileştirir ve dönüşüm oranlarını artırır."
   },
 ];
